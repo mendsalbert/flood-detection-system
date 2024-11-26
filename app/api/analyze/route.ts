@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
 
     // Forward the request to the Python backend
     const pythonBackendResponse = await fetch(
-      "http://127.0.0.1:8000/api/detect-flood",
+      "https://flood-detection-system-backend.onrender.com/api/detect-flood",
       {
         method: "POST",
         body: formData,
