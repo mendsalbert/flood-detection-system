@@ -2,8 +2,10 @@ export async function detectFlood(file: File) {
   const formData = new FormData();
   formData.append("file", file);
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
   try {
-    const response = await fetch("/api/analyze", {
+    const response = await fetch(`${apiUrl}/api/detect-flood`, {
       method: "POST",
       body: formData,
     });
